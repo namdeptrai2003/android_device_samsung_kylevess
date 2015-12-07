@@ -60,15 +60,17 @@ PRODUCT_COPY_FILES += \
 ADDITIONAL_DEFAULT_PROPERTIES += \
 	ro.adb.secure=0 \
 	ro.secure=0 \
-	persist.sys.root_access=1 \
-	persist.service.adb.enable=1
+	persist.sys.root_access=3 \
+	persist.service.adb.enable=1 \
+	persist.service.debuggable=1
 
 
 # Unsecure builds
 ADDITIONAL_DEFAULT_PROPERTIES += \
 	ro.secure=0 \
     	ro.debuggable=1 \
-    	service.adb.root=1
+	persist.sys.root_access=3 \
+	persist.service.adb.enable=1
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -146,8 +148,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # like NetworkLocationProvider and LocationCollector
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.locationfeatures=0 \
-    ro.com.google.networklocation=0
-    ro.product.locale.language=tr
+    ro.com.google.networklocation=0 \
+    ro.product.locale.language=tr \
     ro.product.locale.region=TR
 
 # Extended JNI checks
@@ -160,7 +162,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # MTP
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp
+    persist.sys.usb.config=mtp,adb
 	
 #BRCM stuff
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \

@@ -14,25 +14,21 @@ on init
 
     mkdir /mnt/shell/emulated 0700 shell shell
     mkdir /storage/emulated 0555 root root
-    mkdir /storage/sdcard1 0775 system system
-    mkdir /storage/usbdisk0 0775 system system
+    mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
+    mkdir /storage/sdcard1 0700 root root
 
     export EXTERNAL_STORAGE /storage/emulated/legacy
-    export SECONDARY_STORAGE /storage/sdcard1:/storage/usbdisk0
     export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
     export EMULATED_STORAGE_TARGET /storage/emulated
+    export SECONDARY_STORAGE /storage/sdcard1
 
     # for backwards compatibility
     symlink /storage/emulated/legacy /sdcard
     symlink /storage/emulated/legacy /mnt/sdcard
     symlink /storage/emulated/legacy /storage/sdcard0
     symlink /mnt/shell/emulated/0 /storage/emulated/legacy
-    symlink /storage/sdcard1 /extSdCard
-    symlink /storage/sdcard1 /mnt/extSdCard
-    symlink /storage/sdcard1 /external_sd
-    symlink /storage/sdcard1 /mnt/external_sd
-    symlink /storage/usbdisk0 /usbdisk0
-    symlink /storage/usbdisk0 /mnt/usbdisk0
+    symlink /storage/sdcard1 /sdcard1
+    symlink /storage/sdcard1 /mnt/sdcard1
 
     # Vibetonz
     export VIBE_PIPE_PATH /dev/pipes
@@ -43,7 +39,7 @@ on init
     symlink /dev/block/mmcblk0p11 /dev/block/param
     
     # We will create our own ril-daemon service with different perm and sockets
-    stop ril-daemon
+    #stop ril-daemon
 
 on post-fs-data
     # we will remap this as /storage/sdcard with the sdcard fuse tool
@@ -693,12 +689,6 @@ on post-fs
     chown radio system /efs
     chmod 0771 /efs
 
-on property:persist.sys.storage_preload=1
-    mount ext4 /dev/block/mmcblk0p20 /preload nosuid nodev noatime wait ro
-    setprop storage.preload.complete 1
-
-on property:persist.sys.storage_preload=0
-    exec /system/bin/umount /preload
 
 ## Daemon processes to be run by init.
 ##
@@ -708,7 +698,7 @@ on property:ro.debuggable=1
 
 # create filesystem if necessary
 service setup_fs /system/bin/setup_fs \
-            /dev/block/mmcblk0p17 \
+            /dev/block/mmcblk0p15 \
             /dev/block/mmcblk0p11
     class core
     user root
@@ -738,9 +728,13 @@ service ril-daemon /system/bin/rild
 # create virtual SD card at /mnt/sdcard, based on the /data/media directory
 # daemon will drop to user/group system/media_rw after initializing
 # underlying files in /data/media will be created with user and group media_rw (1023)
-service sdcard /system/bin/sdcard /data/media /mnt/shell/emulated 1023 1023
+service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
     class late_start
-    oneshot
+
+service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/sdcard1 /storage/sdcard1
+    class late_start
+    disabled
+
 
 service wpa_supplicant /system/bin/logwrapper /system/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \

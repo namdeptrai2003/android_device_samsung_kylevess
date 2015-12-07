@@ -40,7 +40,6 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/kylevess/bluetooth
 BOARD_BLUEDROID_VENDOR_CONF := device/samsung/kylevess/bluetooth/libbt_vndcfg.txt
 
 # Connectivity - Wi-Fi
-BOARD_HAVE_SAMSUNG_WIFI     		:= true
 WPA_BUILD_SUPPLICANT 			:= true
 BOARD_WPA_SUPPLICANT_DRIVER 		:= NL80211
 WPA_SUPPLICANT_VERSION      		:= VER_0_8_X
@@ -57,6 +56,9 @@ WIFI_DRIVER_MODULE_NAME     		:= "dhd"
 WIFI_DRIVER_MODULE_ARG      		:= "firmware_path=/system/etc/wifi/bcmdhd_sta.bin nvram_path=/system/etc/wifi/nvram_net.txt"
 WIFI_DRIVER_MODULE_AP_ARG   		:= "firmware_path=/system/etc/wifi/bcmdhd_apsta.bin nvram_path=/system/etc/wifi/nvram_net.txt"
 WIFI_BAND                   		:= 802_11_ABG
+
+# Wi-Fi Tethering
+BOARD_LEGACY_NL80211_STA_EVENTS := true
 BOARD_HAVE_SAMSUNG_WIFI := true
 BOARD_NO_APSME_ATTR := true
 
@@ -98,6 +100,8 @@ ifeq ($(HOST_OS),linux)
     WITH_DEXPREOPT := true
   endif
 endif
+
+MALLOC_IMPL := jemalloc
 
 #FM-Radio
 BOARD_HAVE_FM_RADIO := true

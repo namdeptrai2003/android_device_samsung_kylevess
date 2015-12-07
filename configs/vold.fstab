@@ -13,4 +13,4 @@
 ######################
 
 dev_mount sdcard /storage/sdcard1 auto /devices/platform/sdhci.0/mmc_host/mmc2
-dev_mount sdcard /storage/emulated/legacy auto /devices/platform/mmc_host/mmc2
+dev_mount sdcard /storage/sdcard0 auto /devices/platform/mmc_host/mmc2
