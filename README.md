@@ -12,6 +12,7 @@ Samsung Galaxy Galaxy Trend Lite GT-S7390
   - Buttons
   - Earjack
   - Camera (Partially)
+  - MTP
 
 ### What doesn't work
   - Internal SD Card

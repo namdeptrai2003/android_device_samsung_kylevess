@@ -1,4 +1,4 @@
-import init.bcm281x5.usb.rc
+import init.bcm2166x.usb.rc
 import init.log.rc
 
 on early-init
