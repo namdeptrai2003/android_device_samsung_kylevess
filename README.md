@@ -27,3 +27,7 @@ Copyright 2015 - The CyanogenMod Project
 If use please indicate the source
 
 Vendor tree: https://github.com/kadjart/android_vendor_samsung_kylevess
+
+### Related threads about ROM:
+  - http://forum.xda-developers.com/android/development/rom-cyanogenmod-10-1-galaxy-trend-lite-t3265875/
+  - http://forum.cyanogenmod.org/topic/118940-rom422alpha1wipjdq39es739xcyanogenmod-101-for-the-galaxy-trend-lite/
