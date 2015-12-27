@@ -37,11 +37,6 @@ PRODUCT_COPY_FILES += \
 	$(DEVICE_PATH)/keylayouts/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
 	$(DEVICE_PATH)/keylayouts/samsung-keypad.kl:system/usr/keylayout/samsung-keypad.kl
 
-# Copy Apps
-# 	device/samsung/baffinlite/MultiSIM-Toggle.apk:system/app/MultiSIM-Toggle.apk
-#PRODUCT_COPY_FILES += \
-#	$(DEVICE_PATH)/apk/Effem.apk:system/app/Effem.apk
-
 # Insecure ADBD
 ADDITIONAL_DEFAULT_PROPERTIES += \
 	ro.adb.secure=0 \
@@ -77,13 +72,7 @@ PRODUCT_PACKAGES += \
 
 # Device-specific packages
 PRODUCT_PACKAGES += \
-	SamsungServiceMode \
-	Torch
-
-# Charger
-#PRODUCT_PACKAGES += \
-#	charger \
-#	charger_res_images
+	SamsungServiceMode
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
