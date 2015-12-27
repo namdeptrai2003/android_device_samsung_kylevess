@@ -1,1 +1,0 @@
-# Cyanogenmod 11 patch for GT-S7580 (Kylepro), by Zim555
