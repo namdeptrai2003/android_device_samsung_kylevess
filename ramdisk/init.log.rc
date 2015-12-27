@@ -42,6 +42,10 @@ on property:persist.brcm.log=acm
 	write /sys/class/bcm_log/bcm_log/log_lock 0
 	write /sys/class/bcm_log/bcm_log/log acm
 	write /sys/class/bcm_log/bcm_log/log_lock 1
+on property:persist.brcm.log=none
+	write /sys/class/bcm_log/bcm_log/log_lock 0
+	write /sys/class/bcm_log/bcm_log/log none
+	write /sys/class/bcm_log/bcm_log/log_lock 1
 
 on property:persist.brcm.cp_crash=auto
 	write /sys/class/bcm_log/bcm_log/cp_crash_lock 0
@@ -106,3 +110,4 @@ on property:brcm.ase.file_max_save=1
 
 on property:persist.brcm.log_file_max=*
     write /sys/class/bcm_log/bcm_log/file_max $persist.brcm.log_file_max
+
