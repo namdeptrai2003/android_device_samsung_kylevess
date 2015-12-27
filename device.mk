@@ -43,10 +43,9 @@ PRODUCT_COPY_FILES += \
 #	$(DEVICE_PATH)/apk/Effem.apk:system/app/Effem.apk
 
 # Insecure ADBD
-# (ro.adb.secure=3)
 ADDITIONAL_DEFAULT_PROPERTIES += \
 	ro.adb.secure=0 \
-	persist.service.adb.enable=0
+	persist.service.adb.enable=1
 
 # KSM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -145,7 +144,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # MTP
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp
+    persist.sys.usb.config=mtp,adb
 	
 # Override phone-hdpi-512-dalvik-heap to match value on stock
 # - helps pass CTS com.squareup.okhttp.internal.spdy.Spdy3Test#tooLargeDataFrame)
