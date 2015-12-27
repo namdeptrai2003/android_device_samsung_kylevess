@@ -28,7 +28,7 @@ BOARD_KERNEL_CMDLINE :=
 BOARD_KERNEL_BASE := 0x82000000
 BOARD_KERNEL_PAGESIZE := 4096
 TARGET_KERNEL_CONFIG := cyanogenmod_kylevess_defconfig
-TARGET_KERNEL_SOURCE := kernel/samsung/kylevessxx
+TARGET_KERNEL_SOURCE := kernel/samsung/kylevess
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.6
 
 # Partition Size
