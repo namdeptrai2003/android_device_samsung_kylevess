@@ -1,5 +1,5 @@
 #
-# system.prop for hawaii
+# hawaii
 #
 rild.libpath=/system/lib/libbrcm_ril.so
 #rild.libargs=-d /dev/ttyS0

@@ -42,10 +42,6 @@ on property:persist.brcm.log=acm
 	write /sys/class/bcm_log/bcm_log/log_lock 0
 	write /sys/class/bcm_log/bcm_log/log acm
 	write /sys/class/bcm_log/bcm_log/log_lock 1
-on property:persist.brcm.log=none
-	write /sys/class/bcm_log/bcm_log/log_lock 0
-	write /sys/class/bcm_log/bcm_log/log none
-	write /sys/class/bcm_log/bcm_log/log_lock 1
 
 on property:persist.brcm.cp_crash=auto
 	write /sys/class/bcm_log/bcm_log/cp_crash_lock 0
