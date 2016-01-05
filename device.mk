@@ -3,7 +3,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
-$(call inherit-product-if-exists, vendor/samsung/kylevess/kylevess-common-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/kylevess/kylevess-vendor.mk)
 
 # Use high-density artwork where available
 PRODUCT_LOCALES += hdpi
@@ -138,11 +138,11 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 # Override phone-hdpi-512-dalvik-heap to match value on stock
 # - helps pass CTS com.squareup.okhttp.internal.spdy.Spdy3Test#tooLargeDataFrame)
 # (property override must come before included property)
-PRODUCT_PROPERTY_OVERRIDES += \
-	dalvik.vm.heapgrowthlimit=56m	
+#PRODUCT_PROPERTY_OVERRIDES += \
+#	dalvik.vm.heapgrowthlimit=56m	
 
 # Dalvik heap config
-include frameworks/native/build/phone-hdpi-512-dalvik-heap.mk
+include frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
