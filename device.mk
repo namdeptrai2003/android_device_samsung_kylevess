@@ -75,7 +75,8 @@ PRODUCT_PACKAGES += \
 	libfmradio \
 	audio_policy.hawaii \
 	libnetcmdiface \
-	audio.primary.default
+	audio.primary.default \
+	libstagefrighthw
 
 # Device-specific packages
 PRODUCT_PACKAGES += \
