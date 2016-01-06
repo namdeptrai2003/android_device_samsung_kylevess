@@ -37,6 +37,12 @@ PRODUCT_COPY_FILES += \
 	$(DEVICE_PATH)/keylayouts/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
 	$(DEVICE_PATH)/keylayouts/samsung-keypad.kl:system/usr/keylayout/samsung-keypad.kl
 
+#OTA
+PRODUCT_COPY_FILES += \
+	$(DEVICE_PATH)/OTA/com.otaudater.feature.xml:system/etc/permissions/com.otaudater.feature.xml \
+	$(DEVICE_PATH)/OTA/OTA-Updater-2.0.5.apk:system/app/OTA-Updater-2.0.5.apk \
+	$(DEVICE_PATH)/OTA/rom.ota.prop:system/rom.ota.prop
+
 # Insecure ADBD
 # (ro.adb.secure=3)
 ADDITIONAL_DEFAULT_PROPERTIES += \
