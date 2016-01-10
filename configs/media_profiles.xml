@@ -166,10 +166,7 @@
                    sampleRate="16000"
                    channels="1" />
         </EncoderProfile>
-<!-- 
-
-Unsupported profiles.
-
+<!--
         <EncoderProfile quality="m4v_vga" fileFormat="3gp" duration="30">
             <Video codec="m4v"
                    bitRate="2560000"
