@@ -61,7 +61,6 @@ lib/libhwcodec.so
 lib/libuecodec.so
 #lib/libstagefrighthw.so
 lib/egl/libGLES_hawaii.so
-lib/hw/audio.primary.hawaii.so
 lib/hw/camera.hawaii.so
 lib/hw/gps.hawaii.so
 lib/hw/gralloc.hawaii.so
