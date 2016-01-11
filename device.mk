@@ -73,6 +73,7 @@ PRODUCT_PACKAGES += \
 	audio.r_submix.default \
 	libaudio-resampler \
 	libfmradio \
+	libanalogradiobroadcasting \
 	audio_policy.hawaii \
 	libnetcmdiface \
 	audio.primary.default \
