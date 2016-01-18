@@ -57,8 +57,9 @@ lib/libtiming.so
 lib/libBrcmOMX_Component.so
 lib/libBrcmOMX_Core.so
 lib/libcodec_util.so
+lib/libhwcodec.so
 lib/libuecodec.so
-#lib/libstagefrighthw.so
+lib/libstagefrighthw.so
 lib/egl/libGLES_hawaii.so
 lib/hw/camera.hawaii.so
 lib/hw/gps.hawaii.so
