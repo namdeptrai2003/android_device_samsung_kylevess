@@ -17,9 +17,9 @@ lib/libbrcmamrnbarienc.so
 lib/libbrcmamrnbaridec.so
 lib/libbrcmamrwbarienc.so
 lib/libbrcmamrwbaridec.so
+lib/libOMX.brcm.audio.amrnb.encoder.so
 lib/libOMX.brcm.audio.amrnb.decoder.so
-lib/libOMX.brcm.audio.amrwb.encoder.so
-lib/libOMX.brcm.audio.amrnb.decoder.so
+lib/libOMX.brcm.audio.amrwb.decoder.so
 lib/libOMX.brcm.audio.amrwb.encoder.so
 lib/libsAMRNB.so
 lib/libsAMRWB.so
