@@ -66,11 +66,9 @@ PRODUCT_PACKAGES += \
 	audio.usb.default \
 	audio.r_submix.default \
 	libaudio-resampler \
-	libfmradio \
-	libanalogradiobroadcasting \
 	audio_policy.hawaii \
 	libnetcmdiface \
-	audio.primary.default \
+	audio.primary.default
 
 # Device-specific packages
 PRODUCT_PACKAGES += \
