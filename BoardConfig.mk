@@ -16,7 +16,7 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 TARGET_BOOTLOADER_BOARD_NAME := hawaii
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := kylevess,S7390,GT-S7390,hawaii,hawaii_ss_kylevess
+TARGET_OTA_ASSERT_DEVICE := kylevess,S7390,S7392,GT-S7390,GT-S7392,hawaii,hawaii_ss_kylevess,hawaii_ss_kyleve
 
 # Kernel
 BOARD_KERNEL_BASE := 0x82000000
