@@ -292,7 +292,7 @@ on boot
     chown radio radio /dev/bcm_gps
    
 # SEC_PRODUCT_FEATURE_COMMON_USE_MULTISIM
-    setprop ro.multisim.simslotcount 2
+    setprop ro.multisim.simslotcount 1
 	
 #    # for multi csc
     chown radio radio /proc/LinuStoreIII/efs_info 
