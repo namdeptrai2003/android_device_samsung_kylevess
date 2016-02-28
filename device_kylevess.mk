@@ -1,6 +1,6 @@
 s$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-$(call inherit-product-if-exists, vendor/samsung/kylevess/kylevess-common-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/kylevexx/kylevexx-common-vendor.mk)
 
 # Use high-density artwork where available
 PRODUCT_LOCALES += hdpi
@@ -139,4 +139,4 @@ endif
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := full_kylevess
 PRODUCT_DEVICE := kylevess
-PRODUCT_MODEL := GT-S7392
+PRODUCT_MODEL := GT-S7390

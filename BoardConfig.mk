@@ -1,7 +1,7 @@
 USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
--include vendor/samsung/kylevess/BoardConfigVendor.mk
+-include vendor/samsung/kylevexx/BoardConfigVendor.mk
 
 # Platform
 TARGET_ARCH := arm
@@ -18,14 +18,14 @@ TARGET_GLOBAL_CFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := kylevess,S7390,GT-S7390,hawaii,kylevessss,GT-S7390,S7390
+TARGET_OTA_ASSERT_DEVICE := kylevess,S7390,GT-S7390,hawaii,kylevess
 
 # Kernel
 BOARD_KERNEL_BASE := 0x82000000
 BOARD_KERNEL_PAGESIZE := 4096
 TARGET_KERNEL_CONFIG := bcm21664_hawaii_ss_kylevess_rev00_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/kylevess
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.6
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.7
 #TARGET_PREBUILT_KERNEL := device/samsung/kylevess/zImage
 # PARTITION SIZE
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
