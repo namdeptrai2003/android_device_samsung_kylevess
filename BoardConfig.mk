@@ -1,7 +1,7 @@
 USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
--include vendor/samsung/kylevexx/BoardConfigVendor.mk
+-include vendor/samsung/kylevess/BoardConfigVendor.mk
 
 # Platform
 TARGET_ARCH := arm
@@ -18,15 +18,15 @@ TARGET_GLOBAL_CFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := kylevess,S7390,GT-S7390,hawaii,kylevess
+TARGET_OTA_ASSERT_DEVICE := kylevess,S7390,GT-S7390,hawaii
 
 # Kernel
 BOARD_KERNEL_BASE := 0x82000000
 BOARD_KERNEL_PAGESIZE := 4096
 TARGET_KERNEL_CONFIG := bcm21664_hawaii_ss_kylevess_rev00_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/kylevess
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.7
-#TARGET_PREBUILT_KERNEL := device/samsung/kylevess/zImage
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.6
+
 # PARTITION SIZE
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 8388608
@@ -44,7 +44,7 @@ BOARD_BLUEDROID_VENDOR_CONF := device/samsung/kylevess/bluetooth/libbt_vndcfg_S7
 
 # Connectivity - Wi-Fi
 BOARD_HAVE_SAMSUNG_WIFI     := true
-WPA_BUILD_SUPPLICANT 	    := true
+WPA_BUILD_SUPPLICANT 		:= true
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 WPA_SUPPLICANT_VERSION      := VER_0_8_X
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
@@ -70,26 +70,18 @@ ENABLE_WEBGL                := true
 
 # Hardware rendering
 BOARD_EGL_CFG := device/samsung/kylevess/configs/egl.cfg
+USE_OPENGL_RENDERER := true
 BOARD_USE_MHEAP_SCREENSHOT := true
 BOARD_EGL_WORKAROUND_BUG_10194508 := true
 TARGET_USES_ION := true
 HWUI_COMPILE_FOR_PERF := true
 COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS -DHAWAII_HWC -DADD_LEGACY_ACQUIRE_BUFFER_SYMBOL
 
-# Enable dex-preoptimization to speed up the first boot sequence
-# of an SDK AVD. Note that this operation only works on Linux for now
-ifeq ($(HOST_OS),linux)
-  ifeq ($(WITH_DEXPREOPT),)
-    WITH_DEXPREOPT := true
-  endif
-endif
-
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
 
 # opengl
 BOARD_USE_BGRA_8888 := true
-USE_OPENGL_RENDERER := false
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
@@ -165,4 +157,3 @@ BOARD_SEPOLICY_UNION += \
     system_server.te \
     tvserver.te \
     vclmk.te
-
